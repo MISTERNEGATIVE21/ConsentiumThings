@@ -2,9 +2,16 @@
 #define ConsentiumThings_h
 
 #include <Arduino.h>  
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
-#include <WiFiClient.h>        
+
+#ifdef ESP8266
+    #include <ESP8266WiFi.h>
+    #include <ESP8266HTTPClient.h>
+    #include <WiFiClient.h>        
+#endif
+#ifdef ESP32
+    #include <WiFi.h>
+    #include <HTTPClient.h>  
+#endif
 
 #define THRES_5 4.8828
 #define THRES_3 3.2226
