@@ -3,7 +3,7 @@
   ----> http://consentiuminc.online/
   Check out the links above for our tutorials and product diagrams.
 
-  This is Consentium Inc's IoT library works only for 3.3v tolerant Edge Beta boards running NodeMCU firmware 
+  This Consentium Inc's IoT library works only for 3.3v tolerant ESP8266/ESP32 Edge boards.  
  
   Written by Debjyoti Chowdhury for Consentium Inc.
   MIT license, all text above must be included in any redistribution
