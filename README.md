@@ -1,2 +1,2 @@
 # ConsentiumThings
-This repo contains code for NodeMCU based IoT boards
+This repo contains code for Espressif based IoT boards
