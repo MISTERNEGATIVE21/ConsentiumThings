@@ -44,7 +44,7 @@ float ConsentiumThings::busRead(int j, float threshold){
   float adc_0_data = analogRead(A0) * threshold;
   return adc_0_data;
 }
-void ConsentiumThings::sendREST(const char* key, int sensor_num, String info[],  float data[], int pre, long delay_interval_s){ 
+void ConsentiumThings::sendREST(const char* key, const char* boardkey, int sensor_num, String info[],  float data[], int pre, long delay_interval_s){ 
   String serverName = "https://consentiuminc.onrender.com/api/board/update/";
 
   unsigned long currentMillis = millis();
