@@ -29,7 +29,7 @@ class ConsentiumThings{
         void begin();
         void loop_delay(long);
         void initWiFi(const char*, const char*);
-        void sendREST(const char*, int, String[], float[], int, long); 
+        void sendREST(const char*,const char*, int, String[], float[], int, long); 
         float busRead(int, float);      
 };
 
