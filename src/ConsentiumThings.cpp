@@ -1,5 +1,5 @@
 #include <ConsentiumThings.h>
-
+#include <WiFiClientSecure.h>
 unsigned long previousMillis = 0;  
 
 int ledState = LOW; 
@@ -43,9 +43,7 @@ float ConsentiumThings::busRead(int j, float threshold){
   digitalWrite(select_lines[3], MUXtable[j][3]);
   float adc_0_data = analogRead(A0) * threshold;
   return adc_0_data;
-}
-#include <WiFiClientSecure.h> // Include the WiFiClientSecure library
-
+} // Include the WiFiClientSecure library
 // Root CA certificate of the server (replace with the actual certificate)
 const char* test_root_ca = \
 "-----BEGIN CERTIFICATE-----\n" \
@@ -83,14 +81,14 @@ void ConsentiumThings::sendREST(const char* key, const char* boardkey,int sensor
     // Check WiFi connection status
     if(WiFi.status()== WL_CONNECTED){
       WiFiClientSecure client; // Use WiFiClientSecure for SSL requests
-      
+     //client.setTrustAnchors( test_root_ca);// 8266 
      client.setCACert(test_root_ca); // Set the root CA certificate for SSL verification
 
       HTTPClient http;
 
       String payload;
 
-      if (sensor_num > 0 && sensor_num <= 7) {
+      if (sensor_num > 0 && sensor_num <= 10) {
         serverName += "?key=" + (String)key + "&boardkey=" + (String)boardkey;
         for (int i = 0; i < sensor_num; i++) {
           serverName += "&sensor" + String(i + 1) + "=" + String(data[i], pre) + "&info" + String(i + 1) + "=" + info[i];
